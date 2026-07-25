@@ -1,524 +1,676 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Changmin Chen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta charset="UTF-8">
+  <title>Changmin Chen | PhD Student in Data Science at HKU</title>
 
-<title>Changmin Chen | PhD Student in Data Science at HKU</title>
+  <meta name="author" content="Changmin Chen">
+  <meta name="description"
+        content="Changmin Chen is a PhD student in Data Science at The University of Hong Kong. His research focuses on AI for Neuroscience, Brain–Computer Interfaces, and Neuroimaging.">
 
-<meta name="author" content="Changmin Chen">
+  <link rel="canonical" href="https://changminchen.github.io/">
 
-<meta name="description"
-      content="Changmin Chen is a PhD student in Data Science at The University of Hong Kong. His research focuses on AI for Neuroscience, Brain–Computer Interfaces, and Neuroimaging.">
+  <meta property="og:title"
+        content="Changmin Chen | PhD Student in Data Science at HKU">
+  <meta property="og:description"
+        content="Research in AI for Neuroscience, Brain–Computer Interfaces, and Neuroimaging.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://changminchen.github.io/">
+  <meta property="og:image"
+        content="https://changminchen.github.io/images/profile_2.jpg">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --text: #1f2328;
+      --muted: #5d6670;
+      --link: #0969da;
+      --line: #dfe6ec;
+      --soft-line: #edf1f4;
+      --soft-bg: #f7f9fb;
+      --card-bg: #ffffff;
+      --timeline: #d9e3ea;
+      --timeline-text: #42677d;
+    }
 
-<link rel="canonical" href="https://changminchen.github.io/">
+    * {
+      box-sizing: border-box;
+    }
 
-<meta property="og:title"
-      content="Changmin Chen | PhD Student in Data Science at HKU">
+    html {
+      scroll-behavior: smooth;
+    }
 
-<meta property="og:description"
-      content="Research in AI for Neuroscience, Brain–Computer Interfaces, and Neuroimaging.">
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #ffffff;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+      font-size: 15.5px;
+      line-height: 1.62;
+    }
 
-<meta property="og:type" content="website">
+    a {
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: 3px;
+    }
 
-<meta property="og:url"
-      content="https://changminchen.github.io/">
+    a:hover {
+      text-decoration: underline;
+    }
 
-<meta property="og:image"
-      content="https://changminchen.github.io/images/profile_2.jpg">
+    .page {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 46px 0 28px;
+    }
 
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
+    .profile {
+      display: grid;
+      grid-template-columns: minmax(0, 1.75fr) minmax(220px, 0.85fr);
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
 
-    <style>
+    .name {
+      margin: 0 0 18px;
+      text-align: center;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 650;
+      letter-spacing: -0.025em;
+    }
 
-        .institution-name {
-            font-size: 17px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+    .profile-text p {
+      margin: 0 0 13px;
+    }
 
-        .footer-note {
-            padding: 20px 20px 28px 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-        }
+    .profile-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      font-weight: 500;
+    }
 
-        /* Selected Research: minimalist vertical timeline */
-        .research-list {
-            position: relative;
-            margin-top: 16px;
-            padding-left: 38px;
-        }
+    .profile-links .separator {
+      color: #a3abb2;
+      user-select: none;
+    }
 
-        .research-list::before {
-            content: "";
-            position: absolute;
-            left: 12px;
-            top: 17px;
-            bottom: 17px;
-            width: 1px;
-            background: #dbe4ea;
-        }
+    .profile-photo {
+      width: 100%;
+      max-width: 250px;
+      aspect-ratio: 4 / 5;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      object-position: center 25%;
+      border: 1px solid #e2e8ed;
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(31, 35, 40, 0.10);
+    }
 
-        .research-card {
-            position: relative;
-            margin-bottom: 18px;
-            padding: 18px 20px 15px 20px;
-            background: #ffffff;
-            border: 1px solid #e1e8ed;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(25, 45, 60, 0.035);
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-        }
+    section {
+      padding: 30px 0 4px;
+      border-top: 1px solid var(--soft-line);
+    }
 
-        .research-card:last-child {
-            margin-bottom: 0;
-        }
+    section:first-of-type {
+      border-top: none;
+      padding-top: 12px;
+    }
 
-        .research-card:hover {
-            transform: translateY(-2px);
-            border-color: #cbd9e2;
-            box-shadow: 0 6px 18px rgba(25, 45, 60, 0.07);
-        }
+    h2 {
+      margin: 0 0 18px;
+      font-size: 23px;
+      line-height: 1.3;
+      font-weight: 650;
+      letter-spacing: -0.018em;
+    }
 
-        .research-index {
-            position: absolute;
-            left: -38px;
-            top: 17px;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #c8d8e2;
-            border-radius: 50%;
-            background: #f5f9fb;
-            color: #42677d;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            box-sizing: border-box;
-        }
+    .entry {
+      margin: 0 0 18px;
+    }
 
-        .research-card .papertitle {
-            display: block;
-            line-height: 1.42;
-        }
+    .entry:last-child {
+      margin-bottom: 0;
+    }
 
-        .research-authors {
-            margin-top: 7px;
-            line-height: 1.5;
-        }
+    .institution-name {
+      font-size: 16.5px;
+      font-weight: 650;
+      line-height: 1.4;
+    }
 
-        .research-meta {
-            margin-top: 4px;
-            color: #555;
-            line-height: 1.5;
-        }
+    .entry-detail {
+      margin-top: 2px;
+    }
 
-        .research-links {
-            margin-top: 4px;
-            line-height: 1.5;
-        }
+    .muted {
+      color: var(--muted);
+    }
 
-        .research-summary {
-            margin: 10px 0 0 0;
-            color: #444;
-            line-height: 1.58;
-        }
+    .news-list,
+    .awards-list {
+      margin: 0;
+      padding-left: 22px;
+    }
 
-        .meta-separator {
-            margin: 0 7px;
-            color: #a0a8ae;
-        }
+    .news-list li,
+    .awards-list li {
+      margin-bottom: 8px;
+      padding-left: 2px;
+    }
 
-        @media (max-width: 600px) {
-            .research-list {
-                padding-left: 31px;
-            }
+    .news-list li:last-child,
+    .awards-list li:last-child {
+      margin-bottom: 0;
+    }
 
-            .research-list::before {
-                left: 10px;
-            }
+    .research-list {
+      position: relative;
+      margin-top: 16px;
+      padding-left: 40px;
+    }
 
-            .research-index {
-                left: -31px;
-                width: 22px;
-                height: 22px;
-                font-size: 9px;
-            }
+    .research-list::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 18px;
+      bottom: 18px;
+      width: 1px;
+      background: var(--timeline);
+    }
 
-            .research-card {
-                padding: 16px 16px 14px 16px;
-                border-radius: 8px;
-            }
-        }
-    </style>
+    .research-card {
+      position: relative;
+      margin-bottom: 18px;
+      padding: 18px 20px 16px;
+      background: var(--card-bg);
+      border: 1px solid #e1e8ed;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(25, 45, 60, 0.04);
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .research-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .research-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd9e2;
+      box-shadow: 0 8px 22px rgba(25, 45, 60, 0.075);
+    }
+
+    .research-index {
+      position: absolute;
+      left: -40px;
+      top: 17px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c8d8e2;
+      border-radius: 50%;
+      background: #f5f9fb;
+      color: var(--timeline-text);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .paper-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 650;
+      line-height: 1.45;
+    }
+
+    .research-authors {
+      margin-top: 7px;
+      line-height: 1.52;
+    }
+
+    .research-meta {
+      margin-top: 4px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .research-links {
+      margin-top: 5px;
+      line-height: 1.5;
+    }
+
+    .research-summary {
+      margin: 10px 0 0;
+      color: #3f474e;
+      line-height: 1.62;
+    }
+
+    .meta-separator {
+      margin: 0 7px;
+      color: #a0a8ae;
+    }
+
+    footer {
+      margin-top: 38px;
+      padding: 22px 0 2px;
+      border-top: 1px solid var(--soft-line);
+      text-align: center;
+      color: #7a838b;
+      font-size: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 28px, 920px);
+        padding-top: 28px;
+      }
+
+      .profile {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .profile-photo {
+        grid-row: 1;
+        max-width: 210px;
+      }
+
+      .profile-text {
+        grid-row: 2;
+      }
+
+      .name {
+        font-size: 30px;
+      }
+
+      section {
+        padding-top: 26px;
+      }
+
+      .research-list {
+        padding-left: 32px;
+      }
+
+      .research-list::before {
+        left: 10px;
+      }
+
+      .research-index {
+        left: -32px;
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+      }
+
+      .research-card {
+        padding: 16px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        font-size: 15px;
+      }
+
+      .page {
+        width: min(100% - 22px, 920px);
+      }
+
+      .profile-photo {
+        max-width: 185px;
+      }
+
+      .name {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<table style="width:100%;max-width:850px;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-    <tr style="padding:0">
-        <td style="padding:0">
+  <main class="page">
 
-            <!-- ==================== PROFILE ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr class="profile-row" style="padding:0">
-                    <td style="padding:2.5%;width:65%;vertical-align:middle">
-                        <p class="name" style="text-align:center;">
-                            Changmin Chen
-                        </p>
+    <!-- ==================== PROFILE ==================== -->
+    <header class="profile">
+      <div class="profile-text">
+        <h1 class="name">Changmin Chen</h1>
 
-                        <img src="images/profile_2.jpg"
-                             class="mobile-photo"
-                             alt="Changmin Chen">
+        <p>
+          I am a PhD student in Data Science at
+          <a href="https://www.hku.hk/">The University of Hong Kong</a>,
+          supervised by
+          <a href="https://andrewluo.net/">Prof. Andrew F. Luo</a>.
+        </p>
 
-                        <p>
-                            I am an PhD student in Data Science at
-                            <a href="https://www.hku.hk/">The University of Hong Kong</a>,
-                            supervised by
-                            <a href="https://andrewluo.net/">Prof. Andrew F. Luo</a>.
-                            I will also undertake joint doctoral training at
-                            <a href="https://www.slai.edu.cn/en/">Shenzhen Loop Area Institute</a>
-                            (National College of Artificial Intelligence).
-                        </p>
+        <p>
+          My research focuses on
+          <strong>AI for Neuroscience</strong>,
+          particularly
+          <strong>Brain–Computer Interfaces</strong>
+          and
+          <strong>Neuroimaging</strong>.
+        </p>
 
-                        <p>
-                            My research interests include AI for Neuroscience and Brain-Computer Interfaces.
-                        </p>
+        <p>
+          I am also a research intern at
+          <a href="https://www.shlab.org.cn/">
+            Shanghai Artificial Intelligence Laboratory
+          </a>,
+          working with
+          <a href="https://cf-song.github.io/">Dr. Chunfeng Song</a>.
+        </p>
 
-                        <p>
-                            Previously, I studied at
-                            <a href="https://www.seu.edu.cn/english/">Southeast University</a>
-                            with
-                            <a href="https://bme.seu.edu.cn/qz1/main.htm">Prof. Qing Zhao</a>
-                            and worked at
-                            <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory</a>
-                            with
-                            <a href="https://cf-song.github.io/">Dr. Chunfeng Song</a>.
-                        </p>
+        <div class="profile-links">
+          <a href="mailto:cmchen1015@gmail.com">Email</a>
+          <span class="separator">·</span>
+          <a href="https://github.com/ChangminChen">GitHub</a>
+        </div>
+      </div>
 
-                        <p style="text-align:center">
-                            <a href="mailto:cmchen1015@gmail.com">Email</a>
-                            &nbsp;/&nbsp;
-                            <a href="https://github.com/ChangminChen">GitHub</a>
-                            &nbsp;/&nbsp;
-                            <a href="files/Changmin_Chen_CV.pdf">CV</a>
-                            <!-- Add Google Scholar later:
-                            &nbsp;/&nbsp;
-                            <a href="YOUR_GOOGLE_SCHOLAR_URL">Google Scholar</a>
-                            -->
-                        </p>
-                    </td>
+      <div>
+        <img
+          class="profile-photo"
+          src="images/profile_2.jpg"
+          alt="Changmin Chen">
+      </div>
+    </header>
 
-                    <td class="photo-cell" style="padding:2.5%;width:35%;max-width:35%;vertical-align:middle;">
-                        <img style="width:100%;max-width:100%;border-radius:50%;"
-                             alt="Changmin Chen"
-                             src="images/profile_2.jpg"
-                             class="hoverZoomLink">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <!-- ==================== EDUCATION ==================== -->
+    <section id="education">
+      <h2>Education</h2>
 
-            <!-- ==================== EDUCATION ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                        <h2>Education</h2>
+      <div class="entry">
+        <div class="institution-name">
+          <a href="https://www.hku.hk/">The University of Hong Kong</a>
+        </div>
+        <div class="entry-detail">
+          PhD in Data Science, 2026–
+        </div>
+      </div>
 
-                        <p>
-                            <span class="institution-name">The University of Hong Kong</span><br>
-                            PhD in Data Science, 2026–
-                        </p>
+      <div class="entry">
+        <div class="institution-name">
+          <a href="https://www.seu.edu.cn/english/">Southeast University</a>
+        </div>
+        <div class="entry-detail">
+          M.S. in Electronic and Information Engineering, 2023–2026
+        </div>
+        <div class="entry-detail">
+          Adviser:
+          <a href="https://bme.seu.edu.cn/qz1/main.htm">Prof. Qing Zhao</a>
+        </div>
+      </div>
 
-                        <p>
-                            <span class="institution-name">Southeast University</span><br>
-                            M.S. in Electronic and Information Engineering, 2023–2026<br>
-                            Adviser:
-                            <a href="https://bme.seu.edu.cn/qz1/main.htm">Prof. Qing Zhao</a>
-                        </p>
+      <div class="entry">
+        <div class="institution-name">
+          <a href="https://english.neu.edu.cn/">Northeastern University</a>
+        </div>
+        <div class="entry-detail">
+          B.E. in Biomedical Engineering, 2018–2022
+        </div>
+        <div class="entry-detail">
+          Adviser:
+          <a href="http://faculty.neu.edu.cn/tengyy/zh_CN/index.htm">
+            Prof. Yueyang Teng
+          </a>
+        </div>
+      </div>
+    </section>
 
-                        <p>
-                            <span class="institution-name">Northeastern University</span><br>
-                            B.E. in Biomedical Engineering, 2018–2022<br>
-                            Adviser:
-                            <a href="http://faculty.neu.edu.cn/tengyy/zh_CN/index.htm">Prof. Yueyang Teng</a>
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <!-- ==================== RESEARCH EXPERIENCE ==================== -->
+    <section id="experience">
+      <h2>Research Experience</h2>
 
-            <!-- ==================== RESEARCH EXPERIENCE ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                        <h2>Research Experience</h2>
+      <div class="entry">
+        <div class="institution-name">
+          <a href="https://www.shlab.org.cn/">
+            Shanghai Artificial Intelligence Laboratory
+          </a>
+        </div>
+        <div class="entry-detail">
+          Research Intern in AI for Neuroscience
+        </div>
+        <div class="entry-detail">
+          Worked with
+          <a href="https://cf-song.github.io/">Dr. Chunfeng Song</a>.
+        </div>
+      </div>
+    </section>
 
-                        <p>
-                            <span class="institution-name">Shanghai Artificial Intelligence Laboratory</span><br>
-                            Research Intern in AI for Neuroscience<br>
-                            Worked with
-                            <a href="https://cf-song.github.io/">Dr. Chunfeng Song</a>.
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <!-- ==================== NEWS ==================== -->
+    <section id="news">
+      <h2>News</h2>
 
-            <!-- ==================== NEWS ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                        <h2>News</h2>
+      <ul class="news-list">
+        <li>
+          <strong>Jun. 2026:</strong>
+          We presented our Hilbert–Huang Transform work at OHBM 2026.
+        </li>
+        <li>
+          <strong>Jun. 2025:</strong>
+          We presented our causal structural covariance network study at OHBM 2025.
+        </li>
+        <li>
+          <strong>Apr. 2025:</strong>
+          Our structural covariance network study was published in
+          <em>NeuroImage: Clinical</em>.
+        </li>
+        <li>
+          <strong>Nov. 2024:</strong>
+          UniSPAC was released on bioRxiv.
+        </li>
+        <li>
+          <strong>Jun. 2024:</strong>
+          We presented our structural covariance network study at OHBM 2024.
+        </li>
+      </ul>
+    </section>
 
-                        <ul style="margin-top:10px;">
-                            <li style="margin-bottom:8px;">
-                                <strong>Jun. 2026:</strong>
-                                We presented our Hilbert–Huang Transform work at OHBM 2026.
-                            </li>
+    <!-- ==================== SELECTED RESEARCH ==================== -->
+    <section id="research">
+      <h2>Selected Research</h2>
 
-                            <li style="margin-bottom:8px;">
-                                <strong>May 2026:</strong>
-                                I will join The University of Hong Kong as a PhD student in Fall 2026.
-                            </li>
+      <div class="research-list">
 
-                            <li style="margin-bottom:8px;">
-                                <strong>Jun. 2025:</strong>
-                                We presented our causal structural covariance network study at OHBM 2025.
-                            </li>
+        <article class="research-card">
+          <span class="research-index">01</span>
 
-                            <li style="margin-bottom:8px;">
-                                <strong>Apr. 2025:</strong>
-                                Our structural covariance network study was published in
-                                <em>NeuroImage: Clinical</em>.
-                            </li>
+          <span class="paper-title">
+            Source-Based Morphometry-Derived Individualized Structural Covariance
+            Networks Reveal Neuroanatomical Heterogeneity in Major Depressive Disorder
+          </span>
 
-                            <li style="margin-bottom:8px;">
-                                <strong>Nov. 2024:</strong>
-                                UniSPAC was released on bioRxiv.
-                            </li>
+          <div class="research-authors">
+            <strong>Changmin Chen</strong> et al.
+          </div>
 
-                            <li style="margin-bottom:8px;">
-                                <strong>Jun. 2024:</strong>
-                                We presented our structural covariance network study at OHBM 2024.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+          <div class="research-meta">
+            <em>Under review at Journal of Affective Disorders</em>
+          </div>
 
-            <!-- ==================== SELECTED RESEARCH ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                        <h2>Selected Research</h2>
+          <p class="research-summary">
+            A large-scale multisite MRI study identifying three neuroanatomical
+            subtypes of major depressive disorder, primarily distinguished by
+            altered connections between the frontoparietal control and default
+            mode networks.
+          </p>
+        </article>
 
-                        <div class="research-list">
+        <article class="research-card">
+          <span class="research-index">02</span>
 
-                            <!-- Project 1: Individualized structural covariance networks -->
-                            <div class="research-card">
-                                <span class="research-index">01</span>
+          <span class="paper-title">
+            Beyond Stationarity: A Hilbert–Huang Transform Framework for Reliable,
+            Frequency-Resolved Analysis of Resting-State Brain Networks
+          </span>
 
-                                <span class="papertitle">
-                                    Source-Based Morphometry-Derived Individualized Structural Covariance Networks
-                                    Reveal Neuroanatomical Heterogeneity in Major Depressive Disorder
-                                </span>
+          <div class="research-authors">
+            Yuhan Liu, Wenyao Li, <strong>Changmin Chen</strong>, and Qing Zhao
+          </div>
 
-                                <div class="research-authors">
-                                    <strong>Changmin Chen</strong> et al.
-                                </div>
+          <div class="research-meta">
+            <em>Under review at NeuroImage</em>
+            <span class="meta-separator">·</span>
+            OHBM 2026
+          </div>
 
-                                <div class="research-meta">
-                                    <em>Under review at Journal of Affective Disorders</em>
-                                </div>
+          <p class="research-summary">
+            An adaptive time-frequency framework revealing reproducible frequency
+            and energy profiles across resting-state brain networks.
+          </p>
+        </article>
 
-                                <p class="research-summary">
-                                    A large-scale multisite MRI study identifying three neuroanatomical subtypes
-                                    of major depressive disorder, primarily distinguished by altered connections
-                                    between the frontoparietal control and default mode networks.
-                                </p>
-                            </div>
+        <article class="research-card">
+          <span class="research-index">03</span>
 
-                            <!-- Project 2: Hilbert-Huang Transform -->
-                            <div class="research-card">
-                                <span class="research-index">02</span>
+          <a href="https://doi.org/10.1016/j.nicl.2025.103794">
+            <span class="paper-title">
+              Abnormal Structural Covariance Network in Major Depressive Disorder:
+              Evidence from the REST-meta-MDD Project
+            </span>
+          </a>
 
-                                <span class="papertitle">
-                                    Beyond Stationarity: A Hilbert–Huang Transform Framework for Reliable,
-                                    Frequency-Resolved Analysis of Resting-State Brain Networks
-                                </span>
+          <div class="research-authors">
+            <strong>Changmin Chen</strong>,
+            Yuhan Liu, Yu Sun, Wenhao Jiang, Yonggui Yuan, Qing Zhao,
+            and the DIRECT Consortium
+          </div>
 
-                                <div class="research-authors">
-                                    Yuhan Liu, Wenyao Li, <strong>Changmin Chen</strong>, and Qing Zhao
-                                </div>
+          <div class="research-meta">
+            <em>NeuroImage: Clinical</em>, 2025
+          </div>
 
-                                <div class="research-meta">
-                                    <em>Under review at NeuroImage</em>
-                                    <span class="meta-separator">·</span>
-                                    OHBM 2026
-                                </div>
+          <div class="research-links">
+            <a href="https://doi.org/10.1016/j.nicl.2025.103794">Paper</a>
+            <span class="meta-separator">·</span>
+            <a href="https://doi.org/10.52294/001c.120592">
+              Abstract and Poster
+            </a>
+          </div>
 
-                                <p class="research-summary">
-                                    An adaptive time-frequency framework revealing reproducible frequency
-                                    and energy profiles across resting-state brain networks.
-                                </p>
-                            </div>
+          <p class="research-summary">
+            A large-scale multisite MRI study identifying frontal-centered
+            disruption of structural covariance networks in major depressive disorder.
+          </p>
+        </article>
 
-                            <!-- Project 3: MDD structural covariance network -->
-                            <div class="research-card">
-                                <span class="research-index">03</span>
+        <article class="research-card">
+          <span class="research-index">04</span>
 
-                                <a href="https://doi.org/10.1016/j.nicl.2025.103794">
-                                    <span class="papertitle">
-                                        Abnormal Structural Covariance Network in Major Depressive Disorder:
-                                        Evidence from the REST-meta-MDD Project
-                                    </span>
-                                </a>
+          <a href="https://doi.org/10.5281/zenodo.15641972">
+            <span class="paper-title">
+              Causal Structural Covariance Network Revealing Progressive Changes
+              in Major Depressive Disorder
+            </span>
+          </a>
 
-                                <div class="research-authors">
-                                    <strong>Changmin Chen</strong>,
-                                    Yuhan Liu, Yu Sun, Wenhao Jiang, Yonggui Yuan, Qing Zhao,
-                                    and the DIRECT Consortium
-                                </div>
+          <div class="research-authors">
+            <strong>Changmin Chen</strong> and Qing Zhao
+          </div>
 
-                                <div class="research-meta">
-                                    <em>NeuroImage: Clinical</em>, 2025
-                                </div>
+          <div class="research-meta">
+            <em>OHBM 2025</em>
+          </div>
 
-                                <div class="research-links">
-                                    <a href="https://doi.org/10.1016/j.nicl.2025.103794">Paper</a>
-                                    &nbsp;/&nbsp;
-                                    <a href="https://doi.org/10.52294/001c.120592">Abstract and Poster</a>
-                                </div>
+          <div class="research-links">
+            <a href="https://doi.org/10.5281/zenodo.15641972">
+              Abstract and Poster
+            </a>
+          </div>
 
-                                <p class="research-summary">
-                                    A large-scale multisite MRI study identifying frontal-centered disruption
-                                    of structural covariance networks in major depressive disorder.
-                                </p>
-                            </div>
+          <p class="research-summary">
+            A disease-progression-based analysis revealing directed structural
+            alterations across frontal, temporal, and medial prefrontal regions,
+            with distinct patterns in first-episode and recurrent MDD.
+          </p>
+        </article>
 
-                            <!-- Project 4: Causal structural covariance -->
-                            <div class="research-card">
-                                <span class="research-index">04</span>
+        <article class="research-card">
+          <span class="research-index">05</span>
 
-                                <a href="https://doi.org/10.5281/zenodo.15641972">
-                                    <span class="papertitle">
-                                        Causal Structural Covariance Network Revealing Progressive Changes
-                                        in Major Depressive Disorder
-                                    </span>
-                                </a>
+          <a href="https://doi.org/10.1101/2024.11.27.625336">
+            <span class="paper-title">
+              UniSPAC: A Unified Segmentation Framework for Proofreading and
+              Annotation in Connectomics
+            </span>
+          </a>
 
-                                <div class="research-authors">
-                                    <strong>Changmin Chen</strong> and Qing Zhao
-                                </div>
+          <div class="research-authors">
+            J. Deng, Q. Wu, <strong>Changmin Chen</strong>, Q. Zheng,
+            Z. Zhang, J. Wu, W. Ouyang, and C. Song
+          </div>
 
-                                <div class="research-meta">
-                                    <em>OHBM 2025</em>
-                                </div>
+          <div class="research-meta">
+            <em>bioRxiv</em>, 2024
+            <span class="meta-separator">·</span>
+            Under review at <em>Nature Methods</em>
+          </div>
 
-                                <div class="research-links">
-                                    <a href="https://doi.org/10.5281/zenodo.15641972">Abstract and Poster</a>
-                                </div>
+          <div class="research-links">
+            <a href="https://doi.org/10.1101/2024.11.27.625336">
+              Preprint
+            </a>
+          </div>
 
-                                <p class="research-summary">
-                                    A disease-progression–based analysis revealing directed structural alterations
-                                    across frontal, temporal, and medial prefrontal regions, with distinct patterns
-                                    in first-episode and recurrent MDD.
-                                </p>
-                            </div>
+          <p class="research-summary">
+            A unified 2D–3D framework for efficient connectomics segmentation,
+            proofreading, and neuron tracing.
+          </p>
+        </article>
 
-                            <!-- Project 5: UniSPAC -->
-                            <div class="research-card">
-                                <span class="research-index">05</span>
+      </div>
+    </section>
 
-                                <a href="https://doi.org/10.1101/2024.11.27.625336">
-                                    <span class="papertitle">
-                                        UniSPAC: A Unified Segmentation Framework for Proofreading and
-                                        Annotation in Connectomics
-                                    </span>
-                                </a>
+    <!-- ==================== AWARDS ==================== -->
+    <section id="awards">
+      <h2>Awards</h2>
 
-                                <div class="research-authors">
-                                    J. Deng, Q. Wu, <strong>Changmin Chen</strong>, Q. Zheng,
-                                    Z. Zhang, J. Wu, W. Ouyang, and C. Song
-                                </div>
+      <ul class="awards-list">
+        <li>
+          National Scholarship for Graduate Students, 2025
+        </li>
+        <li>
+          Second Prize, National Biomedical Engineering Innovation Design Competition, 2025
+        </li>
+        <li>
+          Southeast University Graduate Scholarship, 2023–2025
+        </li>
+      </ul>
+    </section>
 
-                                <div class="research-meta">
-                                    <em>bioRxiv</em>, 2024
-                                    <span class="meta-separator">·</span>
-                                    Under review at <em>Nature Methods</em>
-                                </div>
+    <footer>
+      Last updated: July 26, 2026
+    </footer>
 
-                                <div class="research-links">
-                                    <a href="https://doi.org/10.1101/2024.11.27.625336">Preprint</a>
-                                </div>
-
-                                <p class="research-summary">
-                                    A unified 2D–3D framework for efficient connectomics segmentation,
-                                    proofreading, and neuron tracing.
-                                </p>
-                            </div>
-
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-            <!-- ==================== AWARDS ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                        <h2>Awards</h2>
-
-                        <ul>
-                            <li style="margin-bottom:8px;">
-                                National Scholarship for Graduate Students, 2025
-                            </li>
-
-                            <li style="margin-bottom:8px;">
-                                Second Prize, National Biomedical Engineering Innovation Design Competition, 2025
-                            </li>
-
-                            <li style="margin-bottom:8px;">
-                                Southeast University Graduate Scholarship, 2023–2025
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-            <!-- ==================== LAST UPDATED ==================== -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td class="footer-note">
-                        Last updated: June 23, 2026
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-        </td>
-    </tr>
-    </tbody>
-</table>
+  </main>
 </body>
 </html>

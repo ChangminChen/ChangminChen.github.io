@@ -2,10 +2,6 @@
 
 # 
 
-# This repository contains the source code for my academic homepage:
-
-# 
-
 # https://changminchen.github.io/
 
 # 

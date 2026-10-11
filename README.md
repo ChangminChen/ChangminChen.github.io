@@ -1,4 +1,4 @@
-# \# Changmin Chen's Academic Homepage
+# Changmin Chen's Academic Homepage
 
 # 
 
@@ -7,10 +7,6 @@
 # 
 
 # https://changminchen.github.io/
-
-# 
-
-# The website includes my education, research experience, selected research, news, and awards.
 
 # 
 
